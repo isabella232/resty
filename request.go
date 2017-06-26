@@ -416,6 +416,11 @@ func (r *Request) Patch(url string) (*Response, error) {
 	return r.Execute(MethodPatch, url)
 }
 
+// Patch method does REPORT HTTP request. It's defined in section 3.6 of RFC3253.
+func (r *Request) Report(url string) (*Response, error) {
+	return r.Execute(MethodReport, url)
+}
+
 // Execute method performs the HTTP request with given HTTP method and URL
 // for current `Request`.
 // 		resp, err := resty.R().Execute(resty.GET, "http://httpbin.org/get")

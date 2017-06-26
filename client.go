@@ -49,6 +49,9 @@ const (
 
 	// MethodOptions HTTP method
 	MethodOptions = "OPTIONS"
+
+	// MethodReport HTTP method
+	MethodReport = "REPORT"
 )
 
 var (
@@ -904,7 +907,7 @@ func getPointer(v interface{}) interface{} {
 }
 
 func isPayloadSupported(m string) bool {
-	return (m == MethodPost || m == MethodPut || m == MethodDelete || m == MethodPatch)
+	return (m == MethodPost || m == MethodPut || m == MethodDelete || m == MethodPatch || m == MethodReport)
 }
 
 func typeOf(i interface{}) reflect.Type {
